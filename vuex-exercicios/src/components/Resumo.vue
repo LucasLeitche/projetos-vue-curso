@@ -1,0 +1,31 @@
+<template>
+    <Painel titulo="Resumo" roxo>
+        <div class="resumo">
+            <span>Total: <strong>{{ total | dinheiro }}</strong></span>
+            <hr>
+            <button>Finalizar!</button>
+        </div>
+    </Painel>
+</template>
+
+<script>
+import {mapGetters} from 'vuex' // importando função do vuex
+
+export default {
+    //computed: mapGetters(['valorTotal'])
+    computed: mapGetters('carrinho',{
+        total: 'valorTotal'
+    })
+}
+</script>
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    td {
+        border-top: 1px solid #EEE;
+        width: 33%;
+    }
+</style>
